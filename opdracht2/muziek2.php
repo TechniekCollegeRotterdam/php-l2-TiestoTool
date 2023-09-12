@@ -8,7 +8,7 @@
   </head>
   <body>
     <section class="container">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,6 @@
 </nav>
 <div class="card">
   <div class="card-header d-flex justify-content-end">
-<a href="" class="btn btn-success">Muziek toevoegen</a>
   </div>
 
 <div class="card-body">
@@ -48,14 +47,20 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Titel</th>
+            <th>Artiest</th>
+            <th>Album</th>
+            <th>Genre</th>
+
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>1</td>
-            <td>pop</td>  
-            <td class="d-flex justify-content-end"><button type="button" class="btn btn-danger">Primary</button><button type="button" class="btn btn-primary">Primary</button></td>
+            <td>drie biggetjes</td>
+            <td>k3</td>  
+            <td>biggtjes</td>
+            <td>pop</td>
         </tr>
     
     </tbody>

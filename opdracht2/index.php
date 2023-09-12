@@ -18,10 +18,10 @@
       <ul class="navbar-nav">
         
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="afspeellijst2.php">afspeellijst</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="muziek2.php">muziek</a>
         </li>
       </ul>
     </div>
