@@ -8,7 +8,7 @@
   </head>
   <body>
     <section class="container">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,38 +39,25 @@
   </div>
 </nav>
 
-<div class="card">
-  <div class="card-header d-flex justify-content-end">
-<a href="genreetoevoeg.php" class="btn btn-success">genre toevoegen</a>
-  </div>
+    <div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h2>Voeg playlist toe</h2>
+    <a href="muziek.php" class="btn btn-danger">terug</a>
+    </div>
+    <div class="card-body">
 
-<div class="card-body">
-<table class="table table-borderd table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>pop</td>  
-            <td class="d-flex justify-content-end"><button type="button" class="btn btn-danger">Primary</button><button type="button" class="btn btn-primary">Primary</button></td>
-        </tr>
+    <form>
+  <div class="mb-3">
+    <label for="playlist" class="form-label">playlist</label>
+    <input type="text" name="playlist" class="form-control" id="platlist">
+  
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+    </div>
+    </div>
     
-    </tbody>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>pop</td>  
-            <td class="d-flex justify-content-end"><button type="button" class="btn btn-danger">Primary</button><button type="button" class="btn btn-primary">Primary</button></td>
-        </tr>
-    
-    </tbody>
-</table>
-</div>
-</div>
+
+
 </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>

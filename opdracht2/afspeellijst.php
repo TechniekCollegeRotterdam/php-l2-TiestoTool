@@ -40,7 +40,7 @@
 </nav>
 <div class="card">
   <div class="card-header d-flex justify-content-end">
-<a href="" class="btn btn-success">Muziek toevoegen</a>
+<a href="afspeellijsttoevoegen.php" class="btn btn-success">playlis toevoegen</a>
   </div>
 
 <div class="card-body">
