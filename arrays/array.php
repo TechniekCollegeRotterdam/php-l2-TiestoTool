@@ -4,7 +4,7 @@ $persons = ["Timo", "René", "Donny", "Tiësto"];
 foreach($persons as $person){
     ?>
     <p><?= $person ?></p>
-    <?php
+<?php
 }
 
 $animals =["wasbeer","schaap","kip","paard"];
@@ -17,6 +17,16 @@ foreach($animals as $animal){
 //     ["HTML","CSS", "Javascript"],
 //     ["Python", "PHP", "java"],
 //     ["C#", "Unity","JSON"]
+
+
+
+
+
+
+
+
+
+
 // ];
 // foreach($languages as $language){
 //     foreach($language as $list){
