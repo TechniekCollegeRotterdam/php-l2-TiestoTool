@@ -1,9 +1,8 @@
 <?php
-
 $persons = ["Timo", "René", "Donny", "Tiësto"];
 foreach($persons as $person){
     ?>
-    <p><?= $person ?></p>
+    <p><?= $person ?></p
 <?php
 }
 
@@ -18,21 +17,12 @@ foreach($animals as $animal){
 //     ["Python", "PHP", "java"],
 //     ["C#", "Unity","JSON"]
 
-
-
-
-
-
-
-
-
-
 // ];
 // foreach($languages as $language){
 //     foreach($language as $list){
-//        ?>
-//        <p><?= $list ?></p>
-//        <?php
+    //    ?>
+    //    <p><?= $list ?></p>
+    //    <?php
 //     }
 // }
 $people =["Jasper" => 16, "Tiësto" => 18, "RENE" => 17, "donny" => 12, "Timo" => 21];
