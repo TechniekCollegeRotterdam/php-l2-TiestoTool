@@ -34,6 +34,88 @@ if(isset($_POST["add_client"])){
         echo $e->getMessage();
     }
 }
+
+
+if(isset($_POST["edit_client"])){
+
+$client_id = $_POST["client_id"];
+
+$firstname = $_POST["name"];
+
+$lastname = $_POST["last_name"];
+
+$gender = $_POST["email"];
+
+$age = $_POST["age"];
+
+$country = $_POST["country"];
+
+
+
+
+
+try{
+
+    $query = "UPDATE client SET firstname=:firstname, lastname=:lastname, gender=:gender, age=:age, country=:country WHERE id=:client_id";
+
+    $query_run = $db->prepare($query);
+
+
+
+$client = [
+
+    ':client_id' => $client_id,
+
+    ':firstname' => $firstname,
+
+    ':lastname' => $lastname,
+
+    ':gender' => $gender,
+
+    ':age' => $age,
+
+    ':country' => $country
+
+];
+
+
+
+$query_execute = $query_run->execute($client);
+
+
+
+if($query_execute){
+
+    echo "Het is bewerkt!";
+
+    header("Refresh:3; url=index.php");
+
+    exit(0);
+
+} else{
+
+    echo "Het is niet gelukt!";
+
+    header("Refresh:3; url=index.php");
+
+    exit(1);
+
+}
+
+
+
+} catch(PDOException $e){
+
+echo $e->getMessage();
+
+}
+
+
+
+}
+
+
 ?>
-<!-- update -->
+has context menu
+
 <!-- delete -->
