@@ -54,9 +54,7 @@ if(isset($_POST["delete_playlist"])){
 
         $playlist_id = $_POST["delete_playlist"];
     try{
-
             $query = "DELETE FROM playlist  WHERE id=:playlist_id";
-
             $query_run = $db_connection->prepare($query);
         $playlist = [
 

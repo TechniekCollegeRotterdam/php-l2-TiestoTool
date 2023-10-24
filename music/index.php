@@ -86,7 +86,7 @@ foreach ($playlists as $playlist) {
 <tr>
  <td><?= $playlist["name"] ?></td>
 <td>
- <a href="afspeellijsttoevoegen.php?id=<?= $playlist['id']?>" class="btn btn-primary btn-action">Edit</a>
+ <a href="afspeelijstbewerken.php?id=<?= $playlist['id']?>" class="btn btn-primary btn-action">Edit</a>
 <form action="CRUD_afspeellijsttoevoegen.php" method="POST" style="display: inline;">
  <input type="hidden" name="delete_playlist" value="<?= $playlist['id'] ?>">
  <button type="submit" class="btn btn-danger btn-action">Delete</button>

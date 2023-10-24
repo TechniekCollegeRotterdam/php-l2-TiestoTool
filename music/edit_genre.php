@@ -1,3 +1,7 @@
+<?php 
+include("dbconnect.php")
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +12,7 @@
   </head>
   <body>
     <section class="container">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,59 +43,43 @@
   </div>
 </nav>
 
-<div class="card">
-  <div class="card-header d-flex justify-content-end">
-<a href="genretoevoegen.php" class="btn btn-success">genre toevoegen</a>
+    <div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h2>bewerk genre</h2>
+    <a href="genre.php" class="btn btn-danger">terug</a>
+    </div>
+    <div class="card-body">
+
+    <?php
+    if(isset($_GET['id'])){
+        $genre_id = $_GET['id'];
+        $query = "SELECT * from genre WHERE id=:genre_id";
+        $get_genre = $db_connection->prepare($query);
+        $genres = [
+            ':genre_id' => $genre_id
+        ];
+        $get_genre->execute($genres);
+
+        $genre = $get_genre->fetch(PDO::FETCH_ASSOC);
+       
+var_dump($)
+    }
+    ?>
+
+    <form action="CRUD_genretoevoegen.php" method="POST" 
+    >
+  <div class="mb-3">
+    <label for="genre" class="form-label">Naam genre</label>
+    <input type="text" name="genre" class="form-control" id="title" value="<?php $genre["name"] ?>">
   </div>
 
-<div class="card-body">
-<table class="table table-borderd table-striped">
-    
-<div class="container">
-<?php
-
-    include("dbconnect.php");
-?>
-    <h1>genre List</h1>
-    <a href="genretoevoegen.php" class="btn btn-success btn-action">Add genre</a>
-
-<table class="table">
-<thead>
-<tr>
-<th>name</th>
-</tr>
-</thead>
-<tbody>
- <?php
-try {
- $query = "SELECT * FROM genre";
-$get_genre = $db_connection->prepare($query);
-$get_genre->execute();
-$genres = $get_genre->fetchAll();
-if ($genres) {
-foreach ($genres as $genre) {
-?>
-<tr>
- <td><?= $genre["name"] ?></td>
-<td>
- <a href="edit_genre.php?id=<?= $genre['id']?>" class="btn btn-primary btn-action">Edit</a>
-<form action="CRUD_genretoevoegen.php" method="POST" style="display: inline;">
- <input type="hidden" name="delete_genre" value="<?= $genre['id'] ?>">
- <button type="submit" class="btn btn-danger btn-action" name="delete">Delete</button>
-
+  <button type="submit" name="add_genre" class="btn btn-success">Submit</button>
 </form>
-</td>
- </tr>
- <?php
-  }
-}
-} catch (PDOException $e) {
- echo "Connection failed: " . $e->getMessage();
-}
-?>
-</table>
-</div>
-</div>
+    </div>
+    </div>
+    
+
+
 </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
