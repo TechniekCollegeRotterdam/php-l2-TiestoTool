@@ -21,7 +21,7 @@
           <a class="nav-link" href="afspeellijst2.php">afspeellijst</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="muziek2">muziek</a>
+          <a class="nav-link" href="muziek2.php">muziek</a>
         </li>
       </ul>
     </div>
@@ -38,29 +38,31 @@
 </div>
   </div>
 </nav>
-<div class="card">
-  <div class="card-header d-flex justify-content-end">
+
+    <div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h2>Voeg genre toe</h2>
+    <a href="genre.php" class="btn btn-danger">terug</a>
+    </div>
+    <div class="card-body">
+
+    <form action="CRUD_genretoevoegen.php" method="POST" 
+    >
+  <div class="mb-3">
+    <label for="genre" class="form-label">genre</label>
+    <input type="text" name="genre" class="form-control" id="title">
   </div>
 
-<div class="card-body">
-<table class="table table-borderd table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>pop</td>  
-        </tr>
+  <button type="submit" name="add_genre" class="btn btn-success">Submit</button>
+</form>
+    </div>
+    </div>
     
-    </tbody>
-</table>
-</div>
-</div>
+
+
 </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
