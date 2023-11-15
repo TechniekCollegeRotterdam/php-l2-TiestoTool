@@ -38,27 +38,48 @@
 </div>
   </div>
 </nav>
-<div class="card">
+div class="card">
   <div class="card-header d-flex justify-content-end">
-<a href="afspeellijsttoevoegen.php" class="btn btn-success">playlis toevoegen</a>
+<a href="genretoevoegen.php" class="btn btn-success">genre toevoegen</a>
   </div>
 
 <div class="card-body">
 <table class="table table-borderd table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>pop</td>  
-            <td class="d-flex justify-content-end"><button type="button" class="btn btn-danger">Primary</button><button type="button" class="btn btn-primary">Primary</button></td>
-        </tr>
     
-    </tbody>
+<div class="container">
+<?php
+
+    include("dbconnect.php");
+?>
+</thead>
+<tbody>
+ <?php
+try {
+ $query = "SELECT * FROM genre";
+$get_genre = $db_connection->prepare($query);
+$get_genre->execute();
+$genres = $get_genre->fetchAll();
+if ($genres) {
+foreach ($genres as $genre) {
+?>
+<tr>
+ <td><?= $genre["name"] ?></td>
+<td>
+ <a href="edit_genre.php?id=<?= $genre['id']?>" class="btn btn-primary btn-action">Edit</a>
+<form action="CRUD_genretoevoegen.php" method="POST" style="display: inline;">
+ <input type="hidden" name="delete_genre" value="<?= $genre['id'] ?>">
+ <button type="submit" class="btn btn-danger btn-action" name="delete">Delete</button>
+
+</form>
+</td>
+ </tr>
+ <?php
+  }
+}
+} catch (PDOException $e) {
+ echo "Connection failed: " . $e->getMessage();
+}
+?>
 </table>
 </div>
 </div>

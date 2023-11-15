@@ -23,6 +23,9 @@
         <li class="nav-item">
           <a class="nav-link" href="muziek2.php">muziek</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index23.php">Inloggen</a>
+        </li>
       </ul>
     </div>
 
@@ -64,7 +67,7 @@
 
     include("dbconnect.php");
 ?>
-    <h1>Playplist List</h1>
+    <h1>Playlist list</h1>
     <a href="afspeellijsttoevoegen.php" class="btn btn-success btn-action">Add playlist</a>
 
 <table class="table">
@@ -77,7 +80,7 @@
  <?php
 try {
  $query = "SELECT * FROM playlist";
-$get_playlist = $db_connection->prepare($query);
+$get_playlist = $dbconnection->prepare($query);
 $get_playlist->execute();
 $playlists = $get_playlist->fetchAll();
 if ($playlists) {

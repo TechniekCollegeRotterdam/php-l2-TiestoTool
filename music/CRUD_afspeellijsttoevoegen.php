@@ -15,11 +15,11 @@ if(isset($_POST["add_name"])){
 
         if($query_execute){
             echo "Het is gelukt!";
-            header("Location: index.php");
+            header("Location: afspeellijst.php");
             exit(0);
         }else{
             echo "het is niet gelukt:(";
-            header("Location: index.php");
+            header("Location: afspeellijst.php");
             exit(1);
         }
 
@@ -38,11 +38,11 @@ $name = [
 $query_execute = $query_run->execute($name);
 if($query_execute){
     echo "Het is bewerkt!";
-    header("Refresh:3; url=index.php");
+    header("Refresh:3; url=afspeellijst.php");
     exit(0);
 } else{
     echo "Het is niet gelukt!";
-    header("Refresh:3; url=index.php");
+    header("Refresh:3; url=afspeellijst.php");
     exit(1);
 }
 } catch(PDOException $e){
@@ -65,11 +65,11 @@ if(isset($_POST["delete_playlist"])){
 
         if($query_execute){
             echo "Het is verwijderd!";
-            header("Refresh:3; url=index.php");
+            header("Refresh:3; url=afspeellijst.php");
             exit(0);
         } else{
             echo "Het is niet gelukt!";
-            header("Refresh:3; url=index.php");
+            header("Refresh:3; url=afspeellijst.php");
             exit(1);
         }
 
